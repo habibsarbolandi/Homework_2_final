@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     
     
     // this changes the shows the negative sign on the mathDone labeel
-    @IBAction func changSign(_ sender: UIButton) {
+    @IBAction func changeSign(_ sender: UIButton) {
         mathDone.text = mathDone.text! + " -"
         
         // this function allows the user to input numbers after the negative sign
