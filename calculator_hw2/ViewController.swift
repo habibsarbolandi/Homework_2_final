@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     var operationString: String = "";
     var screenNumber: String = "";
     var operation = 0;
-    
+    var negativeNumber = false;
     
     
     // References for objects
@@ -42,19 +42,37 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    // this changes the shows the negative sign on the mathDone labeel
     @IBAction func changSign(_ sender: UIButton) {
-        numberScreen = -numberScreen;
-        screenNumber = "-" + screenNumber;
+        mathDone.text = mathDone.text! + " -"
         
-        if numberPrevious == 0 {
-            mathDone.text = screenNumber;
-        }
+        // this function allows the user to input numbers after the negative sign
+        func numberButtons(_ sender: UIButton) {
             
-        else {
-            mathDone.text = String(numberPrevious) + operationString + screenNumber;
+            if doingMath == true {
+                screenNumber = "";
+                screenNumber = screenNumber + String(sender.tag);
+                numberScreen = Double(screenNumber)!
+                
+                mathDone.text = mathDone.text! + String(sender.tag);
+                doingMath = false
+            }
+                
+            else {
+                screenNumber = screenNumber + String(sender.tag);
+                numberScreen = Double(screenNumber)!
+                
+                mathDone.text = mathDone.text! + String(sender.tag);
+            }
         }
+        
+        // shows the number is negative
+        negativeNumber = true;
     }
     
+    
+    // this displays the operation command the user wishes to use
     @IBAction func mathButtons(_ sender: UIButton) {
         if mathDone.text != "" && sender.tag != 10 && sender.tag != 15{
             
@@ -81,27 +99,51 @@ class ViewController: UIViewController {
                 
             }
             
-            
-            operation = sender.tag
-            doingMath = true;
+            operation = sender.tag // asigns value pushed to operation
+            doingMath = true; // shows we are doing math
         }
             
+        // this is used to when the user pushes the equal sign
         else if sender.tag == 15 {
             
             if operation == 11 {
+                if negativeNumber == true {
+                numberScreen = -numberScreen
                 finalAnswer.text = String( numberPrevious / numberScreen);
+                }
+                else {
+                  finalAnswer.text = String( numberPrevious / numberScreen);
+                }
             }
                 
             else if operation == 12 {
-                finalAnswer.text = String( numberPrevious * numberScreen);
+                if negativeNumber == true {
+                    numberScreen = -numberScreen
+                    finalAnswer.text = String( numberPrevious * numberScreen);
+                }
+                else {
+                    finalAnswer.text = String( numberPrevious * numberScreen);
+                }
             }
                 
             else if operation == 13 {
-                finalAnswer.text = String( numberPrevious - numberScreen);
+                if negativeNumber == true {
+                    numberScreen = -numberScreen
+                    finalAnswer.text = String( numberPrevious - numberScreen);
+                }
+                else {
+                    finalAnswer.text = String( numberPrevious - numberScreen);
+                }
             }
                 
             else if operation == 14 {
-                finalAnswer.text = String( numberPrevious + numberScreen);
+                if negativeNumber == true {
+                    numberScreen = -numberScreen
+                    finalAnswer.text = String( numberPrevious + numberScreen);
+                }
+                else {
+                    finalAnswer.text = String( numberPrevious + numberScreen);
+                }
             }
         }
             
