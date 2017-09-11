@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func changeSign(_ sender: UIButton) {
+    @IBAction func changSign(_ sender: UIButton) {
         numberScreen = -numberScreen;
         screenNumber = "-" + screenNumber;
         
