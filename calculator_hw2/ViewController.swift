@@ -26,7 +26,6 @@ class ViewController: UIViewController {
     @IBAction func numberButtons(_ sender: UIButton) {
         
         if doingMath == true {
-            screenNumber = Strig
             mathDone.text = mathDone.text! + String(sender.tag);
             numberScreen = Double(sender.tag);
             doingMath = false
