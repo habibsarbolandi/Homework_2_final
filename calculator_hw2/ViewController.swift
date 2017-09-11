@@ -15,7 +15,8 @@ class ViewController: UIViewController {
     var operationString: String = "";
     var screenNumber: String = "";
     var operation = 0;
-    var negativeNumber = false;
+    var negativeNumber1 = false;
+    var negativeNumber2 = false;
     
     
     // References for objects
@@ -68,7 +69,14 @@ class ViewController: UIViewController {
         }
         
         // shows the number is negative
-        negativeNumber = true;
+        if numberPrevious == 0 {
+            negativeNumber1 = true;
+        }
+        
+        else if numberPrevious != 0 {
+            negativeNumber2 = true;
+        }
+        
     }
     
     
@@ -106,44 +114,48 @@ class ViewController: UIViewController {
         // this is used to when the user pushes the equal sign
         else if sender.tag == 15 {
             
-            if operation == 11 {
-                if negativeNumber == true {
-                numberScreen = -numberScreen
+            if operation == 11 { // Division
+                if negativeNumber1 == true {
+                    numberPrevious = -numberPrevious;
+                }
+                else if negativeNumber2 == true {
+                    numberScreen = -numberScreen;
+                }
+                
                 finalAnswer.text = String( numberPrevious / numberScreen);
-                }
-                else {
-                  finalAnswer.text = String( numberPrevious / numberScreen);
-                }
             }
                 
-            else if operation == 12 {
-                if negativeNumber == true {
-                    numberScreen = -numberScreen
-                    finalAnswer.text = String( numberPrevious * numberScreen);
+            else if operation == 12 { // Multiplication
+                if negativeNumber1 == true {
+                    numberPrevious = -numberPrevious;
                 }
-                else {
-                    finalAnswer.text = String( numberPrevious * numberScreen);
+                else if negativeNumber2 == true {
+                    numberScreen = -numberScreen;
                 }
+                
+                finalAnswer.text = String( numberPrevious * numberScreen);
             }
                 
-            else if operation == 13 {
-                if negativeNumber == true {
-                    numberScreen = -numberScreen
-                    finalAnswer.text = String( numberPrevious - numberScreen);
+            else if operation == 13 { // Subtraction
+                if negativeNumber1 == true {
+                    numberPrevious = -numberPrevious;
                 }
-                else {
-                    finalAnswer.text = String( numberPrevious - numberScreen);
+                else if negativeNumber2 == true {
+                    numberScreen = -numberScreen;
                 }
+                
+                finalAnswer.text = String( numberPrevious - numberScreen);
             }
                 
-            else if operation == 14 {
-                if negativeNumber == true {
-                    numberScreen = -numberScreen
-                    finalAnswer.text = String( numberPrevious + numberScreen);
+            else if operation == 14 { // Addition
+                if negativeNumber1 == true {
+                    numberPrevious = -numberPrevious;
                 }
-                else {
-                    finalAnswer.text = String( numberPrevious + numberScreen);
+                else if negativeNumber2 == true {
+                    numberScreen = -numberScreen;
                 }
+                
+                finalAnswer.text = String( numberPrevious + numberScreen);
             }
         }
             
@@ -157,7 +169,7 @@ class ViewController: UIViewController {
             screenNumber = "";
             
         }
-    }
+}
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -171,4 +183,3 @@ class ViewController: UIViewController {
     
     
 }
-
