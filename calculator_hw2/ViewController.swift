@@ -101,9 +101,10 @@ class ViewController: UIViewController {
             negativeNumber = true;
         }
         
-        if sender.tag == 19 && negativeNumber == true {
-            operationString = "+";
-        
+        if sender.tag == 19 && negativeNumber == true { // removes the minus sign if the sign button already pushed and found through stackoverflow (https://stackoverflow.com/questions/24122288/remove-last-character-from-string-swift-language)
+            expressionRead.remove(at: expressionRead.index(before: expressionRead.endIndex));
+            mathDone.text = expressionRead;
+            negativeNumber = false;
         }
         
     }
