@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     var operationString: String = ""; // variable to store numerical operational
     var expressionRead: String = ""; // empty string used for reading the math completed
-    var negativeNumber = false;
+    var negativeNumber = 0;
     
     // action triggered with number buttons pressed (watched a tutorial on youtube for the function)
     @IBAction func numberButtons(_ sender: UIButton) {
@@ -98,13 +98,7 @@ class ViewController: UIViewController {
             operationString = "-";
             expressionRead = expressionRead + operationString;
             mathDone.text = mathDone.text! + operationString;
-            negativeNumber = true;
-        }
-        
-        if sender.tag == 19 && negativeNumber == true { // removes the minus sign if the sign button already pushed and found through stackoverflow (https://stackoverflow.com/questions/24122288/remove-last-character-from-string-swift-language)
-            expressionRead.remove(at: expressionRead.index(before: expressionRead.endIndex));
-            mathDone.text = expressionRead;
-            negativeNumber = false;
+            negativeNumber = 1;
         }
         
     }
