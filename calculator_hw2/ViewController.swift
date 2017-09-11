@@ -5,16 +5,16 @@
 //  Created by Habib Sarbolandi on 9/8/17.
 //  Copyright © 2017 Habib Sarbolandi. All rights reserved.
 //
-
 import UIKit
 
 class ViewController: UIViewController {
     
-    var numberScreen:Double = 0;
+    var numberScreen: Double = 0;
     var numberPrevious: Double = 0;
     var doingMath = false;
     var operationString: String = "";
     var screenNumber: String = "";
+    var operation = 0;
     
     
     
@@ -26,23 +26,32 @@ class ViewController: UIViewController {
     @IBAction func numberButtons(_ sender: UIButton) {
         
         if doingMath == true {
+            screenNumber = "";
+            screenNumber = screenNumber + String(sender.tag);
+            numberScreen = Double(screenNumber)!
+            
             mathDone.text = mathDone.text! + String(sender.tag);
-            numberScreen = Double(sender.tag);
             doingMath = false
         }
             
         else {
-            mathDone.text = mathDone.text! + String(sender.tag);
-        
-        if numberScreen != 0 {
-            screenNumber = String(numberScreen) + String(sender.tag);
-            numberScreen = Double(screenNumber)!;
-            }
+            screenNumber = screenNumber + String(sender.tag);
+            numberScreen = Double(screenNumber)!
             
-        else if numberScreen == 0 {
-            screenNumber = String(sender.tag);
-            numberScreen = Double(screenNumber)!;
-            }
+            mathDone.text = mathDone.text! + String(sender.tag);
+        }
+    }
+    
+    @IBAction func changeSign(_ sender: UIButton) {
+        numberScreen = -numberScreen;
+        screenNumber = "-" + screenNumber;
+        
+        if numberPrevious == 0 {
+            mathDone.text = screenNumber;
+        }
+            
+        else {
+            mathDone.text = String(numberPrevious) + operationString + screenNumber;
         }
     }
     
@@ -52,27 +61,58 @@ class ViewController: UIViewController {
             numberPrevious = numberScreen;
             
             if sender.tag == 11 { //Divide
-                
+                operationString = " ÷ ";
+                mathDone.text = mathDone.text! + operationString;
             }
-            
-            else if sender.tag == 12 { //Multiple
                 
+            else if sender.tag == 12 { //Multiple
+                operationString = " x ";
+                mathDone.text = mathDone.text! + operationString;
             }
                 
             else if sender.tag == 13 { //Substract
-                
+                operationString = " - ";
+                mathDone.text = mathDone.text! + operationString;
             }
                 
             else if sender.tag == 14 { //Addition
                 operationString = " + ";
-                mathDone.text = " \(numberPrevious) \(operationString)";
-            }
-            
-            else if sender.tag == 17 { // Sign change
+                mathDone.text = mathDone.text! + operationString;
                 
             }
             
+            
+            operation = sender.tag
             doingMath = true;
+        }
+            
+        else if sender.tag == 15 {
+            
+            if operation == 11 {
+                finalAnswer.text = String( numberPrevious / numberScreen);
+            }
+                
+            else if operation == 12 {
+                finalAnswer.text = String( numberPrevious * numberScreen);
+            }
+                
+            else if operation == 13 {
+                finalAnswer.text = String( numberPrevious - numberScreen);
+            }
+                
+            else if operation == 14 {
+                finalAnswer.text = String( numberPrevious + numberScreen);
+            }
+        }
+            
+        else if sender.tag == 10 {
+            mathDone.text = "";
+            finalAnswer.text = "";
+            numberPrevious = 0;
+            numberScreen = 0;
+            operation = 0;
+            operationString = "";
+            screenNumber = "";
             
         }
     }
@@ -81,12 +121,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
