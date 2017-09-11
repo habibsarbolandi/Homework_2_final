@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     var operationString: String = ""; // variable to store numerical operational
     var expressionRead: String = ""; // empty string used for reading the math completed
-    var negativeNumber = 0;
+    var negativeNumber = false;
     
     // action triggered with number buttons pressed (watched a tutorial on youtube for the function)
     @IBAction func numberButtons(_ sender: UIButton) {
@@ -98,7 +98,6 @@ class ViewController: UIViewController {
             operationString = "-";
             expressionRead = expressionRead + operationString;
             mathDone.text = mathDone.text! + operationString;
-            negativeNumber = 1;
         }
         
     }
