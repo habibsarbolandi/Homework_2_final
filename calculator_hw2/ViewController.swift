@@ -7,6 +7,7 @@
 //
 import UIKit
 import Foundation
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -18,6 +19,7 @@ class ViewController: UIViewController {
     var expressionRead: String = ""; // empty string used for reading the math completed
     var negativeNumber = false;
     var numberScreen: Double = 0;
+    var audioPlayer = AVAudioPlayer();
     
     // action triggered with number buttons pressed (watched a tutorial on youtube for the function)
     @IBAction func numberButtons(_ sender: UIButton) {
@@ -100,6 +102,32 @@ class ViewController: UIViewController {
             expressionRead = expressionRead + operationString;
             mathDone.text = mathDone.text! + operationString;
         }
+        
+    }
+    
+    // This snippet of code was taken from a YouTube tutorial (https://www.youtube.com/watch?v=TaFvJajJo8k)
+    @IBAction func soundPlay(_ sender: UIButton) {
+        let equalSound = URL(fileURLWithPath: Bundle.main.path(forResource: "Yeah", ofType: "mp3")!) // assigns the mp3 file to variable
+        
+        do {
+            // Preperation
+try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+        } catch _ {
+        }
+        do {
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch _ {
+        }
+        
+        // Play the sound once the button is clicked
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: equalSound)
+            
+        } catch _{
+        }
+        
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
         
     }
     

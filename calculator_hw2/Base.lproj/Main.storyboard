@@ -123,6 +123,7 @@
                                 </state>
                                 <connections>
                                     <action selector="mathButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gfM-lL-g3m"/>
+                                    <action selector="soundPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dEb-8Q-MtI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnA-9l-CS6">
@@ -347,7 +348,7 @@
         <scene sceneID="oiu-Wp-tGe">
             <objects>
                 <navigationController id="w1l-pT-Dzp" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EyR-pn-hkl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EyR-pn-hkl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
