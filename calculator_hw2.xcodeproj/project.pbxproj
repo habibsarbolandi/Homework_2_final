@@ -14,6 +14,7 @@
 		832033C91F631661006663B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 832033C71F631661006663B5 /* LaunchScreen.storyboard */; };
 		832033D41F631661006663B5 /* calculator_hw2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832033D31F631661006663B5 /* calculator_hw2Tests.swift */; };
 		832033DF1F631661006663B5 /* calculator_hw2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832033DE1F631661006663B5 /* calculator_hw2UITests.swift */; };
+		83C771C91F676E7300DAE06C /* 18084094_future-stars-lil-uzi-vert-atlantic_t5458ddf2.png in Resources */ = {isa = PBXBuildFile; fileRef = 83C771C81F676E7300DAE06C /* 18084094_future-stars-lil-uzi-vert-atlantic_t5458ddf2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		832033DA1F631661006663B5 /* calculator_hw2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = calculator_hw2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		832033DE1F631661006663B5 /* calculator_hw2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculator_hw2UITests.swift; sourceTree = "<group>"; };
 		832033E01F631661006663B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83C771C81F676E7300DAE06C /* 18084094_future-stars-lil-uzi-vert-atlantic_t5458ddf2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "18084094_future-stars-lil-uzi-vert-atlantic_t5458ddf2.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				832033D21F631661006663B5 /* calculator_hw2Tests */,
 				832033DD1F631661006663B5 /* calculator_hw2UITests */,
 				832033BC1F631661006663B5 /* Products */,
+				83C771C81F676E7300DAE06C /* 18084094_future-stars-lil-uzi-vert-atlantic_t5458ddf2.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				832033C91F631661006663B5 /* LaunchScreen.storyboard in Resources */,
+				83C771C91F676E7300DAE06C /* 18084094_future-stars-lil-uzi-vert-atlantic_t5458ddf2.png in Resources */,
 				832033C61F631661006663B5 /* Assets.xcassets in Resources */,
 				832033C41F631661006663B5 /* Main.storyboard in Resources */,
 			);
@@ -505,6 +509,7 @@
 				832033E51F631661006663B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		832033E61F631661006663B5 /* Build configuration list for PBXNativeTarget "calculator_hw2Tests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +518,7 @@
 				832033E81F631661006663B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		832033E91F631661006663B5 /* Build configuration list for PBXNativeTarget "calculator_hw2UITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +527,7 @@
 				832033EB1F631661006663B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
