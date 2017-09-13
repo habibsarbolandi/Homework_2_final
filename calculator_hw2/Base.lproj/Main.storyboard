@@ -54,7 +54,7 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="18084094_future-stars-lil-uzi-vert-atlantic_t5458ddf2.png" translatesAutoresizingMaskIntoConstraints="NO" id="EBa-7B-H6l">
                                 <rect key="frame" x="12" y="64" width="350" height="237"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -347,9 +347,10 @@
         <scene sceneID="oiu-Wp-tGe">
             <objects>
                 <navigationController id="w1l-pT-Dzp" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EyR-pn-hkl">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="EyR-pn-hkl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="Op0-Tn-Ts5" kind="relationship" relationship="rootViewController" id="7pu-Um-69e"/>
